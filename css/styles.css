@@ -1,0 +1,170 @@
+html, body{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	background-image: url("../images/background.jpg");
+	font-family: cursive;
+	text-align: center;
+}
+
+p{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#title{
+	font-family: 'cursive', 'Comic Sans MS';
+	font-size: 40px;
+	font-style: italic;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: underline;
+	color: #55d1d1;
+}
+
+/*define size for board and spacing from edge*/
+#boarddiv{
+	margin: 35px auto;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+	max-width:900px;
+}
+
+/*limit width to that of game board*/
+#controls, #connections{
+	margin: 35px auto;
+  width: 100%;
+	max-width:1300px;
+}
+
+#board{
+	width: 100%;
+	height: 100%;
+}
+
+/*Add two horizontal lines*/
+#board tr:nth-child(-n + 2){
+	border-bottom: 2px solid gray;
+}
+
+/*Add two vertical lines
+(creates classic open game board)*/
+#board td:nth-child(-n + 2){
+	border-right: 2px solid gray;
+}
+
+/*Show hover effect on game tiles*/
+#board td:hover{
+	background-color: #f2efef;
+	/*border-radius: 25px;*/
+}
+
+/*Canvas fills entire game tile*/
+canvas{
+	width:100%;
+}
+
+.center{
+	text-align: center;
+}
+
+/*icon size for player and robot images*/
+.icon-xs {
+	width: 50px;
+	height: 50px;
+}
+
+/*The foillowing will style and animate the toggles*/
+.toggle {
+	margin: 0px;
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+	vertical-align: middle;
+  }
+
+  .toggle input {display:none;}
+
+  .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #aaaaaa;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+
+  .slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  input:checked + .slider {
+	background-color: #2196F3;
+	}
+	
+  input:focus + .slider {
+	box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+	}
+	
+  .slider.round {
+	border-radius: 34px;
+  }
+
+  .slider.round:before {
+	border-radius: 50%;
+	}
+
+	/*Uniform button size*/
+	.btn-info{
+		width: 95px;
+		height: 48px;
+	}	
+	
+	/*Uniform button size*/
+	.btn-primary{
+		width: 120px;
+		height: 48px;
+	}
+	
+	/*make sure ID isnt hidden in small screen widths*/
+	#yourID{
+		overflow-y: scroll;
+	}
+
+	/*Space button on small screen widths*/
+	#host{
+		margin-bottom: 10px;
+	}
+
+	/*Give connect button a background to begin with*/
+	.input-group-append{
+		background-color: #dbecff;
+	}
+
+	/*Customize opponent and own letter in online mode*/
+	.letter{
+		font-family: cursive, 'Comic Sans MS',Verdana;
+		font-weight: bold;
+		font-size: 20px;
+		color: #1f2f90;
+		vertical-align: middle;
+	}

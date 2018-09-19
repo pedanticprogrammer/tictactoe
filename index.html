@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+    <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Robert Sauer">
+        <title>Tic Tac Toe</title>
+		<link rel="icon" href="./images/favicon.png" sizes="16x16 32x32" type="image/png">
+        <link rel="stylesheet" href="./css/styles.css" type="text/css" media="screen" charset="utf-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="./scripts/game.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.9/peer.min.js"></script>
+    </head>
+
+    <body>
+        <h1 id="title">Tic Tac Toe</h1>
+		<div class="container-fluid">
+			<div id="boarddiv">
+				<table id="board">
+					<tr>
+						<td id="one" class="tile"></td>
+						<td id="two" class="tile"></td>
+						<td id="three" class="tile"></td>
+					</tr>
+					<tr>
+						<td id="four" class="tile"></td>
+						<td id="five" class="tile"></td>
+						<td id="six" class="tile"></td>
+					</tr>
+					<tr>
+						<td id="seven" class="tile"></td>
+						<td id="eight" class="tile"></td>
+						<td id="nine" class="tile"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!--Buttons that appear below game board-->
+		<div id="controls" class="container-fluid">
+			<div class="row center">
+				<!--Left Column-->
+				<div class="col-sm">
+					<img src="./images/player.png" alt="player" class="icon-xs">
+					<label class="toggle">
+						<input type="checkbox" class="tgl" id="first">
+						<span class="slider round"></span>
+					</label>
+					<img src="./images/robot.png" alt="AI" class="icon-xs">
+					<p>First</p>
+				</div>
+				<!--Middle Column-->
+				<div class="col-sm">
+					<button id="close" class="btn btn-info btn-lg online">Close</button>
+					<button id="start-btn" type="button" class="btn btn-info btn-lg" data-started="false"><span>Start</span></button>
+					<button id="switch" class="btn btn-info btn-lg online">Switch</button>
+				</div>
+				<!--Right Column-->
+				<div class="col-sm">
+					<div class="row">
+						<div class="col">
+							<img src="./images/player.png" alt="player" class="icon-xs">
+							<label class="toggle">
+								<input id="against" type="checkbox" >
+								<span class="slider round"></span>
+							</label>
+							<img src="./images/robot.png" alt="AI" class="icon-xs">
+						</div>
+					</div>
+					<p>VS</p>
+				</div>
+
+			</div>
+		</div>
+		<div id="connections" class="container-fluid">
+				<div class="row center">
+					<!--Left Column-->
+					<div class="col-sm">
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text online" id="inputGroup-sizing-default">Your ID:</span>
+							</div>
+							<input id="yourID" type="text" class="form-control online" aria-label="Default" aria-describedby="inputGroup-sizing-default" readonly>
+							<span id="yourLetter" class="letter online"></span>
+						</div>
+					</div>
+					<!--Middle Column-->
+					<div class="col-sm">
+						<div>
+							<button id="host" class="btn btn-primary btn-lg">Host</button>
+						</div>
+					</div>
+					<!--Right Column-->
+					<div class="col-sm">
+						<div class="input-group mb-3">
+							<span id="oppLetter" class="letter online"></span>
+							<input id = "uid" type="text" class="form-control" placeholder="Peer's ID" aria-label="Recipient's username" aria-describedby="basic-addon2">
+							<div class="input-group-append">
+								<button id = "connect" class="btn btn-outline-primary" type="button">Connect</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+    </body>
+</html>

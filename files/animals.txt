@@ -1,0 +1,1 @@
+["cougar", "coyote", "dog", "chimpanzee", "parrot", "chicken hog", "walrus", "marten", "stallion", "mouse", "ermine", "rabbit", "snake", "panda"]
