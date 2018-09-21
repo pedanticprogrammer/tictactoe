@@ -39,10 +39,10 @@ $(document).ready(function () {
 				game.player = game.opponent;
 				game.opponent = temp;
 			}
-		}
-		//Send move to opponent
-		if (conn && !game.done && game.playerTurn) {
-			conn.send(JSON.stringify(["move", game]));
+			//Send move to opponent
+			if (conn) {
+				conn.send(JSON.stringify(["move", game]));
+			}
 		}
 	});
 
@@ -61,8 +61,11 @@ $(document).ready(function () {
 			});
 
 			//Re-enable toggles
-			cpuTgl.removeAttr("disabled");
-			firstTgl.removeAttr("disabled");
+			if(!conn){
+				console.log("stupid");
+				cpuTgl.removeAttr("disabled");
+				firstTgl.removeAttr("disabled");
+			}
 			$("#switch").removeAttr("disabled");
 		} else {
 			//Modify button data and text
@@ -383,7 +386,7 @@ function minimax(game, depth, runMax) {
 					game.boardArr[i][j] = game.player;
 					game.row = i;
 					game.col = j;
-					
+
 					//Recursive Call, choose min value, reset tile
 					best = Math.min(best, minimax(game, depth + 1, !runMax));
 					game.boardArr[i][j] = ' ';
